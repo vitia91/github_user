@@ -19,13 +19,12 @@ public class RestClient {
      * @param config
      * @return
      */
-    public ResponseEntity<? extends Map> getData(RestConfig config) {
+    public ResponseEntity<? extends Map> call(RestConfig config) {
         RestTemplate rest = new RestTemplate();
-        ResponseEntity<? extends Map> exchange = rest.exchange(
+        return rest.exchange(
                 config.getURI(),
                 config.getHttpMethod(),
                 config.getHttpEntity(),
                 Map.class);
-        return exchange;
     }
 }
