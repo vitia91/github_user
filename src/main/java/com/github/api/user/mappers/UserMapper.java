@@ -37,7 +37,7 @@ public class UserMapper implements Function<Map, User> {
             Integer publicRepos = (Integer) map.get(PUBLIC_REPOS);
 
             return User.builder()
-                    .id((Long) map.get(ID))
+                    .id((Integer) map.get(ID))
                     .login(String.valueOf(map.get(LOGIN)))
                     .name(String.valueOf(map.get(NAME)))
                     .type(String.valueOf(map.get(TYPE)))

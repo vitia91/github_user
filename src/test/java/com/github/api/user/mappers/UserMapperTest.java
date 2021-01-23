@@ -22,7 +22,7 @@ import static org.mockito.Mockito.verify;
 public class UserMapperTest {
 
     private static final String URI = "http://localhost";
-    private static Long ID = 1L;
+    private static Integer ID = 1;
     private static String LOGIN = "LOGIN";
     private static String USER_NAME = "USER_NAME";
     private static String USER_TYPE = "USER_TYPE";
