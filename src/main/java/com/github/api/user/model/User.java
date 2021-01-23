@@ -11,7 +11,7 @@ import java.time.ZonedDateTime;
 @Data
 public class User {
 
-    private Integer id;
+    private Long id;
     private String login;
     private String name;
     private String type;

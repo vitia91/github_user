@@ -28,7 +28,7 @@ class UserControllerTest {
     private ObjectMapper objectMapper;
     @MockBean
     private UserService userService;
-    
+
     @Test
     public void testGetUser() throws Exception {
         //given
