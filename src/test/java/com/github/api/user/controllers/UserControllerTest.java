@@ -21,15 +21,14 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @SpringBootTest
 @AutoConfigureMockMvc
 class UserControllerTest {
-    public static final String LOGIN = "login";
+    private static final String LOGIN = "login";
     @Autowired
     private MockMvc mockMvc;
-    @MockBean
-    private UserService userService;
-
     @Autowired
     private ObjectMapper objectMapper;
-
+    @MockBean
+    private UserService userService;
+    
     @Test
     public void testGetUser() throws Exception {
         //given
