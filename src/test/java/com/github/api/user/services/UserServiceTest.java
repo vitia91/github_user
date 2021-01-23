@@ -1,11 +1,13 @@
 package com.github.api.user.services;
 
+import com.github.api.user.model.User;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import static org.junit.Assert.assertEquals;
+import static org.springframework.test.util.AssertionErrors.assertNotNull;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 public class UserServiceTest {
@@ -18,8 +20,9 @@ public class UserServiceTest {
         //given
         String login = "login";
         //when
-        String user = userService.getUser(login);
+        User user = userService.getUser(login);
         //then
-        assertEquals("Invalid user", login, user);
+        assertNotNull("User was not found", user);
+        assertEquals("Invalid user", login, user.getLogin());
     }
 }
