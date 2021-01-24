@@ -53,7 +53,7 @@ public class UserServiceTest {
         User user = userService.getUser(LOGIN);
         //then
         assertEquals("Invalid user", expectedUser, user);
-        verify(restClient).call(argThat((RestConfig config) -> config.getURI().toString().contains("LOGIN")));
+        verify(restClient).call(argThat((RestConfig config) -> config.getURI().toString().contains(LOGIN)));
         verify(restClient).call(any(RestConfig.class));
         verify(userMapper).apply(any(Map.class));
     }

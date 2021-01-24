@@ -1,6 +1,6 @@
-package com.github.api.user.counters;
+package com.github.api.user.counters.aspect;
 
-import com.github.api.user.counters.repositories.UserRequestCounterService;
+import com.github.api.user.counters.services.UserRequestCounterService;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
@@ -12,13 +12,13 @@ import org.springframework.stereotype.Component;
 public class UserAspect {
 
     @Autowired
-    private UserRequestCounterService requestCounterService;
+    private UserRequestCounterService userRequestCounterService;
 
     @Before("execution(* com.github.api.user.controllers.UserController.getUser(..))")
     public void increaseRequestCounter(JoinPoint joinPoint) {
         if (joinPoint.getArgs().length >= 1) {
             String login = (String) joinPoint.getArgs()[0];
-            requestCounterService.increaseRequestCounter(login);
+            userRequestCounterService.increaseRequestCounter(login);
         }
     }
 }
