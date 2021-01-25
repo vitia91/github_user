@@ -1,6 +1,5 @@
 package com.github.api.user.counters.aspects;
 
-import com.github.api.user.counters.aspect.UserAspect;
 import com.github.api.user.counters.services.UserRequestCounterService;
 import com.github.api.user.model.User;
 import com.github.api.user.services.UserService;

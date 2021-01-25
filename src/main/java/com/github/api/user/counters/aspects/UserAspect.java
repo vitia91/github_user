@@ -1,4 +1,4 @@
-package com.github.api.user.counters.aspect;
+package com.github.api.user.counters.aspects;
 
 import com.github.api.user.counters.services.UserRequestCounterService;
 import org.aspectj.lang.JoinPoint;
